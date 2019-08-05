@@ -49,19 +49,7 @@ with open('fpl_player_data.csv', 'w', newline='', encoding='utf-8') as csvfile:
             value_added_per_90 = 0
 
         # VALUE ADDED PER MILLION (VAPM): the amount of points gained by a player per million cost
-        # above the cheapest alternative in that position
-        if (element_type <= 2):
-            if (now_cost > 4.0):
-                value_added_per_million = round(value_added / (now_cost - 4.0), 3)
-            else:
-                # avoids divide by zero error - players at minimum price are almost always
-                # benchwarmers and so usually aren't relevant to discussions around value
-                value_added_per_million = 0
-        elif (element_type >= 3):
-            if (now_cost > 4.5):
-                value_added_per_million = round(value_added / (now_cost - 4.5), 3)
-            else:
-                value_added_per_million = 0
+        value_added_per_million = round(value_added / now_cost, 3)
 
         # VALUE ADDED PER MILLION PER 90 (VAPM90): value added per million above the cheapest
         # alternative in that position, per 90 minutes on the pitch
