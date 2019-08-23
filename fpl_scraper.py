@@ -4,7 +4,7 @@
 
 import requests, csv
 
-url = 'https://fantasy.premierleague.com/api/bootstrap-static'
+url = 'https://fantasy.premierleague.com/api/bootstrap-static/'
 json_data = requests.get(url).json()
 
 # open CSV file to write data
